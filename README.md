@@ -54,3 +54,96 @@ Task 5 : Import and Transform Customers table
 
 Task 6 : Update Documentation
 Finally added all the above details to this README.md file
+
+# Milestone 3 : Creating the Data Model
+
+Task 1 : Create a Date table
+
+1.  Created a date table running from the start of the year containing the earliest date in the Orders['Order Date'] column to the end of the year containing the latest date in the Orders['Shipping Date'] column. DAX formula was used to create the table.
+
+2.  Used DAX formulas to add the following columns to the date table:
+
+Day of Week
+Month Number (i.e. Jan = 1, Dec = 12 etc.)
+Month Name
+Quarter
+Year
+Start of Year
+Start of Quarter
+Start of Month
+Start of Week
+
+Task 2 : Build the STAR schema Data model
+
+1.  Created relationships between the tables to form a star schema. The relationships are as follows:
+
+Products[product_code] to Orders[product_code]
+Stores[store code] to Orders[Store Code]
+Customers[User UUID] to Orders[User ID]
+Date[date] to Orders[Order Date]
+Date[date] to Orders[Shipping Date]
+
+2.  Ensured that the relationship between Orders[Order Date] and Date[date] is the active relationship, and that all relationships are one-to-many, with a single filter direction flowing from the dimension table side to the fact table side.
+
+Task 3 : Create a measure table
+
+Created a separate table for measures as a best practice that helped us keep our data model organized and easy to navigate. Created a new table in the data Model View with Power Query Editor as it makes the measures table visible in the Query Editor, which is useful for debugging and troubleshooting.
+
+From the Model view, selected the Enter Data from the Home tab of the ribbon
+Named the new blank table Measures Table and then clicked Load
+
+Task 4 : Create Key Measures
+
+1.  Created a measure called Total Orders that counts the number of orders in the Orders table
+
+
+2.  Created a measure called Total Revenue that multiplies the Orders[Product Quantity] column by the Products[Sale_Price] column for each row, and then sums the result
+
+
+3.  Created a measure called Total Profit which performs the following calculation:
+
+4.  For each row, subtracted the Products[Cost_Price] from the Products[Sale_Price], and then multipled the result by the Orders[Product Quantity]
+
+Sumed the result for all rows
+
+4.  Created a measure called Total Customers that counts the number of unique customers in the Orders table. This measure changes as the Orders table is filtered, and it is not just count the rows of the Customers table!
+
+5.  Created a measure called Total Quantity that counts the number of items sold in the Orders table
+
+6.  Created a measure called Profit YTD that calculates the total profit for the current year
+
+7.  Created a measure called Revenue YTD that calculates the total revenue for the current year
+
+Task 5 : Create Date and Geogaraphy Hierarchies 
+
+Hierarchies allow us to drill down into our data and perform granular analysis within our report. I created two hierarchies in this task: one for dates, to facilitate drill-down in line charts, and one for geography, to allow me to filter our data by region, country and province/state.
+
+
+1.  Created a date hierarchy using the following levels:
+
+Start of Year
+Start of Quarter
+Start of Month
+Start of Week
+Date
+
+2.  Created a new calculated column in the Stores table called Country that creates a full country name for each row, based on the Stores[Country Code] column, according to the following scheme:
+GB : United Kingdom
+US : United States
+DE : Germany
+
+3.  In addition to the country hierarchy, it can sometimes be helpful to have a full geography column, as in some cases this makes mapping more accurate. Created a new calculated column in the Stores table called Geography that created a full geography name for each row, based on the Stores[Country Region], and Stores[Country] columns, separated by a comma and a space.
+
+4.  Ensured that the following columns have the correct data category assigned, as follows:
+
+World Region : Continent
+Country : Country
+Country Region : State or Province
+
+5.  Create a Geography hierarchy using the following levels:
+
+World Region
+Country
+Country Region
+
+Task 6 : Updated Documentation in comprehensive manner.
