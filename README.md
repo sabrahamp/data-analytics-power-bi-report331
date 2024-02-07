@@ -203,3 +203,62 @@ Added a date slicer to allow users to filter the page by year, using the between
 
 Task 7 : Updated documentation 
 Updated documentation in comprehensive manner
+
+# Milestone 6 : Create an Executive summary page
+
+Task 1 : Create the Card Visuals
+1.  Copied one of your grouped card visuals from the Customer Detail page and pasted it onto the Executive Summary page
+
+2.  Duplicated it two more times, and arranged the three cards so that they span about half of the width of the page
+
+3.  Assigned them to your Total Revenue, Total Orders and Total Profit measures
+
+4.  Used the Format > Callout Value pane to ensure no more than 2 decimal places in the case of the revenue and profit cards, and only 1 decimal place in the case of the Total Orders measure
+
+Task 2 : Add a Revenue Trending Line Chart 
+As with the card visuals, I coped the line graph from your Customer Detail page, and changed it as follows:
+
+Set X axis to your Date Hierarchy, with only the Start of Year, Start of Quarter and Start of Month levels displayed
+Set Y-axis to Total Revenue
+Positioned the line chart just below the cards
+
+Task 3 : Add Donut charts for Revenue by Country and Store Type
+Added a pair of donut charts, showing Total Revenue broken down by Store[Country] and Store[Store Type] respectively. Positioned these to the right of the cards along the top of the page. Again, copied the formatting from the Customer Detail page to save time.
+
+Taks 4 : Add a Bar Chart of Orders by Product Category
+Added a bar chart showing number of orders by product category. This was completed quickly using the following steps:
+
+1.  Copied the Total Customers by Product Category donut chart from the Customer Detail page
+
+2.  In the on-object Built a visual pane, changed the visual type to Clustered bar chart
+
+3.  Changed the X axis field from Total Customers to Total Orders
+
+4.  With the Format pane open, clicked on one of the bars to bring up the Colors tab, and selected an appropriate colour for my theme
+
+Task 5 : Add KPI Visuals 
+
+1.  Created KPIs for Quarterly Revenue, Orders and Profit. To do I created a set of new measures for the quarterly targets. Created measures for the following:
+
+-   Previous Quarter Profit
+-   Previous Quarter Revenue
+-   Previous Quarter Orders
+-   Targets, equal to 5% growth in each measure compared to the previous quarter
+
+2.  Added a new KPI for the revenue:
+
+-   The Value field should be Total Revenue
+-   The Trend Axis should be Start of Quarter
+-   The Target should be Target Revenue
+
+3.  In the Format pane, set the Trend Axis to On, expand the associated tab, and set the values as follows:
+
+-   Direction : High is Good
+-   Bad Colour : red
+-   Transparency : 15%
+
+4.  Formated the Callout Value so that it only shows to 1 decimal place
+
+5.  Duplicated the card two more times, and set the appropriate values for the Profit and Orders cards
+
+6.  Arranged the three cards below the revenue line chart
