@@ -262,3 +262,96 @@ Task 5 : Add KPI Visuals
 5.  Duplicated the card two more times, and set the appropriate values for the Profit and Orders cards
 
 6.  Arranged the three cards below the revenue line chart
+
+# Milestone 7 : Create Product Detail Page
+
+Task 1 : Add Gauge visuals
+Added a set of three gauges, showing the current-quarter performance of Orders, Revenue and Profit against a quarterly target. The CEO had told me that they are targeting 10% quarter-on-quarter growth in all three metrics.
+
+
+1.  In my measures table, define DAX measures for the three metrics, and for the quarterly targets for each metric
+
+2.  Created three gauge filters, and assigned the measures you have created. In each case, the maximum value of the gauge should be set to the target, so that the gauge shows as full when the target is met.
+
+3.  Applied conditional formatting to the callout value (the number in the middle of the gauge), so that it shows as red if the target is not yet met, and black otherwise. You may use different colours if it first better with your colour scheme.
+
+4.  Arranged my gauges so that they are evenly spaced along the top of the report, but leave another similarly-sized space for the card visuals that will display which slicer states are currently selected
+
+Task 2 : Plan out the Filter State Cards
+
+1.  To the left of the gauges, I put placeholder shapes for the cards which will show the filter state. Using a colour in keeping with my theme, added two recatangle shapes, which together took up roughly the same space as one of the gauges.
+
+2.  I added values to these that will eventually reflect the filter state of the slicers. To do this, I needed to define the following measures:
+Category Selection = IF(ISFILTERED(Products[Category]), SELECTEDVALUE(Products[Category]), "No Selection"),"No Selection")
+Country Selection = IF(ISFILTERED(Stores[Country]), SELECTEDVALUE(Stores[Country]), "No Selection"),"No Selection")
+
+3.  Now added a card visual to each of the rectangles, and one of these measures to each of them. Formated the card visuals so that they are the same size as the gauges, and the text is centred.
+
+Task 3 : Add an Are Chart of Revenue by Product Category
+Added an area chart that shows how the different product categories are performing in terms of revenue over time.
+
+Added a new area chart, and applied the following fields:
+
+X axis to Dates[Start of Quarter]
+Y axis values to Total Revenue
+Legend to Products[Category]
+
+Arranged it on the left of the page, extending to level with the start of the second gauge visual.
+
+Task 4 : Add a Top Products Table
+Added a top 10 products table underneath the area chart. I copied the top customer table from the Customer Detail page to speed up formatting. The table has the following fields:
+
+-   Product Description
+-   Total Revenue
+-   Total Customers
+-   Total Orders
+-   Profit per Order
+
+Task 5 : Add a Scatter Graph of Quantity Sold Vs. Profit per Item
+
+The products team wanted to know which items to suggest to the marketing team for a promotional campaign. They wanted a visual that allows them to quickly see which product ranges are both top-selling items and also profitable.
+
+A scatter graph would be ideal for this job.
+
+1.  Created a new calculated column called [Profit per Item] in your Products table, using a DAX formula to work out the profit per item
+
+2.  Added a new Scatter chart to the page, and configure it as follows:
+
+-   Values should be Products[Description]
+-   X-Axis should be Products[Profit per Item]
+-   Y-Axis should be Orders[Total Quantity]
+-   Legend should be Products[Category]
+
+Task 6 : Create a Slicer Toolbar
+
+Slicers are a handy way for users to control how the data on a page are filtered, but adding multiple slicers can clutter up the layout of your report page.
+
+A professional-looking solution to this issue is to use Power BI's bookmarks feature to create a pop-out toolbar which can be accessed from the navigation bar on the left-hand side of our report.
+
+
+1.  Downloaded the collection of custom icons. I used these for all of our navigation bar icons.
+
+2.  Added a new blank button to the top of your navigation bar, set the icon type to Custom in the Format pane, and chose Filter_icon.png as the icon image. Also set the tooltip text to Open Slicer Panel.
+
+3.  Added a new rectangle shape in the same colour as your navigation bar. Its dimensions was set to be the same height as the page, and about 3-5X the width of the navigation bar itself. Opened the Selection pane and brought it to the top of the stacking order.
+
+4.  Added two new slicers. One was be set to Products[Category], and the other to Stores[Country]. Changed the titles to Product Category and Country respectively.
+
+-   It is set in Vertical List slicer style
+-   It is possible to select multiple items in the Product Category slicer, but only one option should be -  -   selected in the Country slicer
+-   Configured the Country slicer so that there is a Select All option
+-   Ensured the formatting is neat, and fits with your chosen report style. An example layout can be seen here .
+-   In the Selection pane grouped the slicers with your slicer toolbar shape
+
+5.  I added a Back button so that we can hide the slicer toolbar when it's not in use.
+-   Add a new button, and select the Back button type
+-   Position it somewhere sensible, for example in the top-right corner of the toolbar
+-   In the Selection pane, drag the back button into the group with the slicers and toolbar shape
+
+6.  Opened the Bookmarks pane and added two new bookmarks: one with the toolbar group hidden in the Selection pane, and one with it visible. Named them Slicer Bar Closed and Slicer Bar Open. Right-clicked each bookmark in turn, and ensured that Data is unchecked. This will prevented the bookmarks from altering the slicer state when we open and close the toolbar.
+
+7.  The final step was to assign the actions on the buttons to the bookmarks. Opened the Format pane and turned the Action setting on for both the Filter button and Back button.
+
+For each button, set the Type to Bookmark, and selected the appropriate bookmark. Finally, tested the buttons and slicers. Remembered to Ctrl-Click to use buttons while designing the report in Power BI Desktop.
+
+Task 7 : Updated Documentation 
