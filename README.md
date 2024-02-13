@@ -355,3 +355,46 @@ A professional-looking solution to this issue is to use Power BI's bookmarks fea
 For each button, set the Type to Bookmark, and selected the appropriate bookmark. Finally, tested the buttons and slicers. Remembered to Ctrl-Click to use buttons while designing the report in Power BI Desktop.
 
 Task 7 : Updated Documentation 
+
+# Milestone 8 - Create a Store Map Page
+
+Task 1 : Add a Map Visual
+
+1.  On the Stores Map page, added a new map visual. It took up the majority of the page, just leaving a narrow band at the top of the page for a slicer. Set the style to my satisfaction in the Format pane, and made sure Show Labels is set to On.
+
+2.  Set the controls of my map as follows:
+Auto-Zoom: On
+Zoom buttons: Off
+Lasso button: Off
+
+3.  Assigned Geography hierarchy to the Location field, and ProfitYTD to the Bubble size field
+
+Task 2 : Add a Country Slicer
+
+Add a slicer above the map, set the slicer field to Stores[Country], and in the Format section set the slicer style as Tile and the Selection settings to Multi-select with Ctrl/Cmd and Show "Select All" as an option in the slicer.
+
+Task 3 : Create a Stores Drillthrough Page
+
+To make it easy for the region managers to check on the progress of a given store, we need to create a drillthrough page that summarises each store's performance. This was created with the following visuals:
+
+
+-   A table showing the top 5 products, with columns: Description, Profit YTD, Total Orders, Total Revenue
+-   A column chart showing Total Orders by product category for the store
+-   Gauges for Profit YTD against a profit target of 20% year-on-year growth vs. the same period in the previous year. The target should use the Target field, not the Maximum Value field, as the target will change as we move through the year.
+-   A Card visual showing the currently selected store
+
+1.  Created a new page named Stores Drillthrough. Open the format pane and expand the Page information tab. Set the Page type to Drillthrough and set Drill through when to Used as category. Set Drill through from to country region.
+
+2.  Created some measures for the gauges as follows:
+
+-   Profit YTD and Revenue YTD: You should have already created this earlier in the project
+-   Profit Goal and Revenue Goal, which should be a 20% increase on the previous year's year-to-date profit or revenue at the current point in the year
+
+3.  Added the visuals to the drillthrough page. An example layout was shown in the material.
+
+Task 4 : Create a Stores Tooltip Page 
+
+We want users to be able to see each store's year-to-date profit performance against the profit target just by hovering the mouse over a store on the map. To do this, I created a custom tooltip page, and copied over the profit gauge visual, then set the tooltip of the visual to the tooltip page I had created.
+
+Task 5 : Updated documentation 
+Updated documentation with all steps used for Milestone-8 and saved both README and .pbix files to git.
