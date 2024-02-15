@@ -398,3 +398,36 @@ We want users to be able to see each store's year-to-date profit performance aga
 
 Task 5 : Updated documentation 
 Updated documentation with all steps used for Milestone-8 and saved both README and .pbix files to git.
+
+# Milestome 9 - Cross-Filtering and Navigation
+
+Task 1 : Fix the Cross-Filtering
+From the Edit Interactions view in the Format tab of the ribbon, I set the following interactions:
+
+1.  Executive Summary Page
+
+Cross-Filtering on Product Category bar chart and Top 10 Products table changed so that it should not filter the card visuals or KPIs
+
+2. Customer Detail Page
+
+- Cross-Filtering on Top 20 Customers table changed so that it should not filter any of the other visuals 
+- Cross-Filtering on Total Customers by Product Donut Chart changed so that it should not affect the Customers line graph 
+- Cross-Filtering on Total Customers by Country donut chart changed so that it should cross-filter Total Customers by Product donut Chart
+
+3. Product Detail Page
+
+- Cross-Filtering on Orders vs. Profitability scatter graph changed so that it should not affect any other visuals 
+- Cross-Filtering on Top 10 Products table changed so that it should not affect any other visuals
+
+Task 2 : Finish the Navigation Bar
+The below final task was to add navigation buttons for the individual report pages.
+
+1.  For each page, there was a custom icon available in the custom icons collection you downloaded earlier in the project. For each icon there are two colour variants. I used the white version for the default button appearance, and the cyan one so that the button changes colour when hovered over with the mouse pointer. In the sidebar of the Executive Summary page, added four new blank buttons, and in the Format > Button Style pane, set the Apply settings to field to Default, and set each button icon to the relevant white png in the Icon tab.
+
+2.  For each button, went to Format > Button Style > Apply settings to and set it to On Hover, and then selected the alternative colourway of the relevant button under the Icon tab
+
+3.  For each button, turned on the Action format option, and selected the type as Page navigation, and then selected the correct page under Destination
+
+4.  Finally, grouped the buttons together, and copied them across to the other pages. Tested navigation functionalities and everything worked as expected.
+
+Task 3 : Updated this Documentation
