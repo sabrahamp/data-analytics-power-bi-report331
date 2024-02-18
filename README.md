@@ -431,3 +431,45 @@ The below final task was to add navigation buttons for the individual report pag
 4.  Finally, grouped the buttons together, and copied them across to the other pages. Tested navigation functionalities and everything worked as expected.
 
 Task 3 : Updated this Documentation
+
+# Milestone 10 : Create Metrics for Users Outside the Company Using SQL
+
+Task 1 : Connect to the SQL Server
+
+1.  I used the Postgres database server hosted on Microsoft Azure. To connect to the server and run queries from VSCode, I installed the SQLTools extension.
+
+2.  Once I have done this, I connected the server using the following details:
+
+HOST: powerbi-data-analytics-server.postgres.database.azure.com
+PORT: 5432
+DATABASE: orders-db
+USER: maya
+PASSWORD: AiCore127!
+
+Task 2 : Checking the Table and Column Names 
+
+The table and column names in this database were different from the ones I have been using in Power BI.
+
+1.  Printed a list of the tables in the database and saved the result to a csv file for my reference.
+
+2.  Printed a list of the columns in the orders table and saved the result to a csv file called orders_columns.csv
+
+3.  Repeated the same process for each other table in the database, saving the results to a csv file with the same name as the table
+
+Task 3 : Query the Database
+
+Wrote SQL queries to answer the following questions. In each case, once I was happy with the result of the query, exported the result to a csv file and uploaded it to my Github repository, along with the query itself as a .sql file. So for example, question 1 I generated files called question_1.csv and question_1.sql.
+
+1.  How many staff are there in all of the UK stores?
+
+2.  Which month in 2022 has had the highest revenue?
+
+3. Which German store type had the highest revenue for 2022?
+
+4. Create a view where the rows are the store types and the columns are the total sales, percentage of total sales and the count of orders
+
+5. Which product category generated the most profit for the "Wiltshire, UK" region in 2021?
+
+Task 4 : Update Documentation
+
+Documented my achievements in a comprehensive manner. Updated the README file on the GitHub repository of this project with detailed information about the tasks accomplished in this milestone. Also ensured that my SQL queries and results are uploaded to the Github repository.
